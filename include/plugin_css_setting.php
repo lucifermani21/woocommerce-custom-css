@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if( !class_exists( 'MS_Custom_CSS_Setting' ) ){
     class MS_Custom_CSS_Setting{
 		
-		function __construct(){
+		function plugin_CSS_hooks(){
 			add_action( 'wp_enqueue_scripts', array( $this, 'custom_plugin_min_css' ) );
 			$this->MS_SASS_css_compiler();
 		}
@@ -76,3 +76,4 @@ if( !class_exists( 'MS_Custom_CSS_Setting' ) ){
     } 
 }
 $obj = new MS_Custom_CSS_Setting;
+$ovj->plugin_CSS_hooks();
