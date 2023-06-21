@@ -15,8 +15,7 @@ if( !class_exists( 'MS_Custom_CSS_Setting' ) ){
 		
 		public function custom_plugin_min_css(){
 			$plugin_URL = plugins_url( '/css/woocommerce.min.css' , __FILE__ );
-			//$version = filemtime( plugins_url( '/css/woocommerce.min.css' , __FILE__ ) );
-			$version = '0.0.5';
+			$version = filemtime( plugin_dir_path(__FILE__) . '/css/woocommerce.min.css' );
 			wp_register_style( 'woocustommincss', $plugin_URL , array('woocommerce-general'), $version , 'all' );
 			wp_enqueue_style( 'woocustommincss', 'plugin_custom');
 		}
