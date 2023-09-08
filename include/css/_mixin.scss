@@ -1,0 +1,54 @@
+@mixin d_none {
+    display: none;
+}
+@mixin woo-btn {
+    text-decoration: $text-decoration  !important;
+    text-transform: $text-transform;
+    border-radius: $btn_bor_radius;
+    font-size: $btn_font_size;
+    font-weight: $font-weight;
+    padding: $product_btn_padding !important;
+    border-color: $btn_clr !important;
+    background-color: $btn_clr !important;
+    color: $btn_txt_clr !important;
+}
+@mixin woo-btn-hover {
+    border-color: $border-color!important;
+    background-color : $btn_hclr !important;
+    color: $btn_htxt_clr !important;
+}
+@mixin woo-message {
+    border-top-color: $woo-message-border !important;
+}
+@mixin woo-message-before {
+    color: $woo-message-before-color !important;
+}
+@mixin woo-product-box {    
+    background-color:transparent !important;
+    background-clip: border-box !important;		
+    text-align: center !important;
+	padding:$product_box_pading  !important;
+	border:$product_box_bor;
+	border-radius:$product_box_bor_radis;
+	box-shadow: $product_box_shadow;
+}
+@mixin woo-title {
+    letter-spacing: -.0025em !important;    
+    font-weight: 600 !important;
+    text-transform: uppercase!important;
+    margin-top: 1.5rem!important;
+    margin-bottom: 1.5rem!important;
+    
+}
+@mixin woo-price {	
+	font-size: $product_price_size !important;
+    color: $product_price_text !important;
+    font-weight: 700!important;
+    font-family: $font-family;
+    line-height: 1.5;
+    padding: 0px !important;
+}
+@mixin cart-table {
+    background-color: $table_hbg_clr;
+	color: $table_htext_clr;
+}
