@@ -11,7 +11,6 @@ if( !class_exists( 'MS_Custom_Functions' ) ){
 			add_action( 'woocommerce_admin_field_ms_size' , array( $this, 'MS_size_cutsom_type' ) );
 			add_action( 'woocommerce_admin_field_ms_dimension' , array( $this, 'MS_dimension_cutsom_type' ) );
 			add_action( 'woocommerce_admin_field_ms_border' , array( $this, 'MS_border_cutsom_type' ) );
-			add_action( 'woocommerce_admin_field_ms_css_editor' , array( $this, 'MS_css_editor_cutsom_type' ) );
 		}
 		
 		public function MS_size_cutsom_type( $value ){		
@@ -196,42 +195,7 @@ if( !class_exists( 'MS_Custom_Functions' ) ){
 				$value['unit'] = 'px';
 			}
 			return $value;
-		}
-		
-		public function MS_css_editor_cutsom_type( $value ){		
-		    $description = \WC_Admin_Settings::get_field_description( $value );
-			$option_value = (array)\WC_Admin_Settings::get_option( $value['id'], $value['default'] );
-			?>
-			<tr valign="top">
-				<th scope="row" class="titledesc">
-					<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?></label>
-					<?php echo $description['tooltip_html'];?>
-				</th>
-				<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
-					<textarea
-						wrap="hard"
-						name="<?php echo esc_attr( $value['id'] ); ?>"
-						id="<?php echo esc_attr( $value['id'] ); ?>"
-						style="<?php echo esc_attr( $value['css'] ); ?>"
-						class="<?php echo esc_attr( $value['class'] ); ?>"
-					><?php echo esc_attr( $option_value[0] ); ?></textarea>
-					<?php echo $description['description']; ?>
-				</td>
-			</tr>
-			<script type="text/javascript">
-			(function ($) {
-				var codeMirror = CodeMirror.fromTextArea(document.getElementById("<?php echo esc_attr( $value['id'] ); ?>"), {
-					'mode': 'text/css',
-					'lineNumbers': true,
-					'lineWrapping': true,
-					'indentUnit': 0,
-					'cm-tab-extra-space-remove': true,					
-				});
-				codeMirror.focus();
-			})(jQuery);
-			</script>
-			<?php
-		}		
+		}	
  
 		/* Units Dropdown */
 		public function drodown_units(){
