@@ -21,6 +21,8 @@ if( !class_exists( 'WOOCSS' ). false ){
 			$file_version = '6.65.7';
 			wp_enqueue_style( 'codemirror_css', plugins_url('codemirror/codemirror.min.css',__FILE__ ), array(), $file_version, false );
 			wp_enqueue_script( 'codemirror_js', plugins_url('codemirror/codemirror.min.js',__FILE__ ), array(), $file_version, false );
+			//$file_version = '0.0.5';
+			//wp_enqueue_script( 'custom-admin-script_js', plugins_url('js/custom-admin-script.js',__FILE__ ), array(), $file_version, false );
 		}
 		
 		public function custom_add_action_plugin( $plugin_link, $plugin_file ){
