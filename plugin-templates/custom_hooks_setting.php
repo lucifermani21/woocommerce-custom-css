@@ -50,8 +50,10 @@ $settings = array(
 		'desc' => __( 'Please note this is only working when "Theme support" is enabled.', 'woocommerce-custom-settings-plugin' ),
 		'id' => 'html_after_header',
 		'default'  => '<div class="container">',
-		'type' => 'textarea',                   
+		'type' => 'textarea',             
 		'desc_tip' => true,
+		'css' => 'width:50%;height:150px;',
+		'class' => 'codemirror_text',
 	),
 	array(
 		'title' => __( 'Add HTML Before Footer', 'woocommerce-custom-settings-plugin' ),
@@ -60,6 +62,8 @@ $settings = array(
 		'default'  => '</div>',
 		'type' => 'textarea',                   
 		'desc_tip' => true,
+		'css' => 'width:50%;height:150px;',
+		'class' => 'codemirror_text',
 	),
 	array(
 		'type' => 'sectionend',

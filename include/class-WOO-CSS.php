@@ -14,6 +14,7 @@ if( !class_exists( 'WOOCSS' ). false ){
 		public function hooks(){			
 			add_filter( 'plugin_action_links', array( $this, 'custom_add_action_plugin' ), 10, 2 );
 			add_action( 'admin_enqueue_scripts', array( $this, 'MS_enqueue_custom_admin_style_script' ) );
+			add_action('admin_footer', array( $this, 'MS_admin_script_footer' ));
 			//add_action( 'admin_menu', array( $this, 'admin_menu_page') );
 		}
 		
@@ -21,8 +22,11 @@ if( !class_exists( 'WOOCSS' ). false ){
 			$file_version = '6.65.7';
 			wp_enqueue_style( 'codemirror_css', plugins_url('codemirror/codemirror.min.css',__FILE__ ), array(), $file_version, false );
 			wp_enqueue_script( 'codemirror_js', plugins_url('codemirror/codemirror.min.js',__FILE__ ), array(), $file_version, false );
-			//$file_version = '0.0.5';
-			//wp_enqueue_script( 'custom-admin-script_js', plugins_url('js/custom-admin-script.js',__FILE__ ), array(), $file_version, false );
+		}
+
+		public function MS_admin_script_footer(){
+			$file_version = '0.0.5';
+			wp_enqueue_script( 'custom-admin-script_js', plugins_url('js/custom-admin-script.js',__FILE__ ), array(), $file_version, false );
 		}
 		
 		public function custom_add_action_plugin( $plugin_link, $plugin_file ){
