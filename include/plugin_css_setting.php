@@ -10,23 +10,22 @@ if( !class_exists( 'MS_Custom_CSS_Setting' ) ){
 		
 		function plugin_CSS_hooks(){
 			add_action( 'wp_enqueue_scripts', array( $this, 'custom_plugin_min_css' ) );
-			add_action( 'wp_head', array( $this, 'MS_custom_plugin_style_enqueue' ) );
 			$this->MS_SASS_css_compiler();
 		}
 		
 		public function custom_plugin_min_css(){
+			/*WooCommerce CSS*/
 			$plugin_URL = plugins_url( '/css/woocommerce.min.css' , __FILE__ );
 			$version = filemtime( plugin_dir_path(__FILE__) . '/css/woocommerce.min.css' );
 			wp_register_style( 'woocustommincss', $plugin_URL , array('woocommerce-general'), $version , 'all' );
 			wp_enqueue_style( 'woocustommincss', 'plugin_custom');
-		}
-		
-		public function MS_custom_plugin_style_enqueue(){
+
+			/*Get admin Custom CSS*/
 			$option_style_css = get_option( 'custom_woocommerce_css' );			
 			file_put_contents(dirname( __FILE__ ). '/css/custom_style.css',$option_style_css);
 			$plugin_URL = plugins_url( '/css/custom_style.css' , __FILE__ );
 			$version = filemtime( plugin_dir_path(__FILE__) . '/css/custom_style.css' );
-			wp_register_style( 'custom_style', $plugin_URL , array('woocustommincss'), $version , 'all' );
+			wp_register_style( 'custom_style', $plugin_URL , array('woocommerce-general'), $version , 'all' );
 			wp_enqueue_style( 'custom_style', 'plugin_custom');
 		}
 
