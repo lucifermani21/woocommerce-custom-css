@@ -25,7 +25,7 @@ if( !class_exists( 'MS_Custom_CSS_Setting' ) ){
 			file_put_contents(dirname( __FILE__ ). '/css/custom_style.css',$option_style_css);
 			$plugin_URL = plugins_url( '/css/custom_style.css' , __FILE__ );
 			$version = filemtime( plugin_dir_path(__FILE__) . '/css/custom_style.css' );
-			wp_register_style( 'custom_style', $plugin_URL , array('woocommerce-general'), $version , 'all' );
+			wp_register_style( 'custom_style', $plugin_URL , array('global-styles-inline'), $version , 'all' );
 			wp_enqueue_style( 'custom_style', 'plugin_custom');
 		}
 
