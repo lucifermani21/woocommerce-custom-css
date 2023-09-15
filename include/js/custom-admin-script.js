@@ -7,8 +7,6 @@
                 'mode': 'htmlmixed',
                 'lineNumbers': true,
                 'lineWrapping': true,
-                'indentUnit': 0,
-                'cm-tab-extra-space-remove': true,					
             });
             codeMirror.focus();
         }
