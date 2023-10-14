@@ -15,6 +15,7 @@ if( !class_exists( 'WOOCSS' ). false ){
 			add_filter( 'plugin_action_links', array( $this, 'custom_add_action_plugin' ), 10, 2 );
 			add_action( 'admin_enqueue_scripts', array( $this, 'MS_enqueue_custom_admin_style_script' ) );
 			add_action('admin_footer', array( $this, 'MS_admin_script_footer' ));
+			add_action( 'wp_enqueue_scripts', array( $this, 'MS_plugin_scripts' ) );
 			//add_action( 'admin_menu', array( $this, 'admin_menu_page') );
 		}
 		
@@ -32,6 +33,11 @@ if( !class_exists( 'WOOCSS' ). false ){
 			wp_enqueue_script( 'custom-admin-script_js', plugins_url('js/custom-admin-script.js',__FILE__ ), array(), $file_version, false );
 		}
 		
+		public function MS_plugin_scripts(){
+			$plugin_URL = plugins_url( '/js/custom-pluign-script.js' , __FILE__ );
+			$version = filemtime( plugin_dir_path(__FILE__) . '/js/custom-pluign-script.js' );
+			wp_enqueue_script( 'custom_plugin_js', $plugin_URL, array(), $version, true );
+		}
 		public function custom_add_action_plugin( $plugin_link, $plugin_file ){
 			if ( $plugin_file != CUSTOM_SETTING_PLUGIN_BASENAME ) {
 				return $plugin_link;
