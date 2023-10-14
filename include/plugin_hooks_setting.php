@@ -16,6 +16,7 @@ if( !class_exists( 'MS_Custom_hooks_Setting' ) ){
 			add_filter( 'woocommerce_product_related_products_heading', array( $this, 'MS_woocommerce_product_related_products_heading' ) );
 			add_filter( 'woocommerce_return_to_shop_text', array( $this, 'MS_woocommerce_return_to_shop_text' ) );
 			add_filter( 'woocommerce_thankyou_order_received_text', array( $this, 'MS_order_received_text' ), 10, 2 );
+            add_filter( 'woocommerce_product_subcategories_hide_empty', array( $this, 'MS_subcategories_hide_empty' ), 10, 1 );
         }
 		
         function ms_pluign_woocommerce_support(){
@@ -75,7 +76,13 @@ if( !class_exists( 'MS_Custom_hooks_Setting' ) ){
             }
             return $current_status;
         }            
-
+        
+        public function MS_subcategories_hide_empty( $hide_empty ) {
+            $woo_categories_hide_empty = get_option( 'woo_categories_hide_empty' );
+            if( $woo_categories_hide_empty == 'yes' ){
+                $hide_empty = FALSE;
+            }            
+        }
         function MS_button_text(){
             global $product;
 			$product_type = $product->get_type();		
