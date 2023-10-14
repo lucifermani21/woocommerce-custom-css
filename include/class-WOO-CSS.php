@@ -19,9 +19,12 @@ if( !class_exists( 'WOOCSS' ). false ){
 		}
 		
 		public function MS_enqueue_custom_admin_style_script(){
-			$file_version = '6.65.7';
-			wp_enqueue_style( 'codemirror_css', plugins_url('codemirror/codemirror.min.css',__FILE__ ), array(), $file_version, false );
-			wp_enqueue_script( 'codemirror_js', plugins_url('codemirror/codemirror.min.js',__FILE__ ), array(), $file_version, false );
+			global $current_section;
+			if( ( $current_section == 'woocustom-settingtab' ) || ( $current_section == 'extra-settings' ) ){
+				$file_version = '6.65.7';
+				wp_enqueue_style( 'codemirror_css', plugins_url('codemirror/codemirror.min.css',__FILE__ ), array(), $file_version, false );
+				wp_enqueue_script( 'codemirror_js', plugins_url('codemirror/codemirror.min.js',__FILE__ ), array(), $file_version, false );	
+			}			
 		}
 
 		public function MS_admin_script_footer(){
