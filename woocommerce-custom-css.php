@@ -3,7 +3,7 @@
 * Plugin Name: WooCommerce Custom Theme Options
 * Plugin URI: https://github.com/lucifermani21/woocommerce-custom-css.git
 * Description: WooCommerce custom theme CSS variables with SASS and another pages edit options with WooCommerce Support. Product Image Hover Effect add option and Quick View option avilable.
-* Version: 2.5.1
+* Version: 3.0.2
 * Author: Manpreet Singh
 * Author URI: https://github.com/lucifermani21/woocommerce-custom-css.git
 **/
@@ -25,4 +25,5 @@ if( is_plugin_active( 'woocommerce/woocommerce.php' ) ){
 	include_once CUSTOM_EDITING__DIR .  '/include/plugin_custom_functions.php';
     include_once CUSTOM_EDITING__DIR .  '/include/plugin_hooks_setting.php';
 	include_once CUSTOM_EDITING__DIR .  '/include/plugin_css_setting.php';
+    include_once CUSTOM_EDITING__DIR .  '/include/plugin_hover_image.php';
 }
