@@ -26,12 +26,12 @@ class WOO_IMAGE_HOVER{
         else:
             echo  '<img src="'. woocommerce_placeholder_img_src() .'" class="img-fluid product-img" alt="'.get_the_title().'" />';
 		endif;
-        $product_gallery_image = wc_get_product()->get_gallery_image_ids();
-        $image_id = isset( $product_gallery_image[1] ) ? $product_gallery_image[1] : '';
-        if ( $image_id ) {
-            echo wp_get_attachment_image( $image_id, $size, '', array( 'class' => 'img-fluid product-img', 'alt' => get_the_title() ) ) ;
+        $product = new WC_product($post->ID);
+        $product_gallery_image = isset( $product->get_gallery_image_ids()[0] ) ? $product->get_gallery_image_ids()[0] : '';
+        if ( $product_gallery_image ) {
+            echo wp_get_attachment_image( $product_gallery_image, $size, '', array( 'class' => 'img-fluid product-img_2', 'alt' => get_the_title() ) ) ;
         } else{
-            echo get_the_post_thumbnail( $post->ID, $size, array( 'class' => 'img-fluid product-img_2', 'alt' => get_the_title() ) ); 
+            echo get_the_post_thumbnail( $post->ID, $size, array( 'class' => 'img-fluid product-img_1', 'alt' => get_the_title() ) ); 
         }
 		echo '</div>';
     }
