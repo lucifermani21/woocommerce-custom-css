@@ -26,4 +26,5 @@ if( is_plugin_active( 'woocommerce/woocommerce.php' ) ){
     include_once CUSTOM_EDITING__DIR .  '/include/plugin_hooks_setting.php';
 	include_once CUSTOM_EDITING__DIR .  '/include/plugin_css_setting.php';
     include_once CUSTOM_EDITING__DIR .  '/include/plugin_hover_image.php';
+    include_once CUSTOM_EDITING__DIR .  '/include/plugin_product_quickview.php';
 }

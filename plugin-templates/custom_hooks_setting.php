@@ -71,7 +71,7 @@ $settings = array(
 	),
 	array(
 		'title' => __( 'Bootstrap 5', 'woocommerce-custom-settings-plugin' ),
-		'desc' => __( 'Enable Bootstrap 5 for your website. If your website not using Bootstrap 5.', 'woocommerce-custom-settings-plugin' ),
+		'desc' => __( 'Enable Bootstrap 5 for your website. If your website not using Bootstrap version "5.3.2".', 'woocommerce-custom-settings-plugin' ),
 		'id' => 'woo_theme_bootstrap5',
 		'default'  => 'no',
 		'type' => 'checkbox',                   
