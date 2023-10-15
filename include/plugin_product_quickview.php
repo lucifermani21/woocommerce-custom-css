@@ -21,10 +21,9 @@ class WOO_CUSTOM_QUICKVIEW{
         }
     }
     public function MS_custom_quickview(){
-        global $product;
-        echo '<a href="#" class="button custom_quick_view mb-3 w-50 mx-auto d-block" data-bs-toggle="modal" data-bs-target="#quickview_'.$product->id.'">Quick View</a>';
-        echo ' 
-        <div class="modal fade" id="quickview_'.$product->id.'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        global $product;?>
+        <a href="#" class="button custom_quick_view mb-3 w-50 mx-auto d-block" data-bs-toggle="modal" data-bs-target="#quickview_<?php $product->id;?>">Quick View</a>
+        <div class="modal fade" id="quickview_<?php $product->id;?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header border border-0">
@@ -32,15 +31,14 @@ class WOO_CUSTOM_QUICKVIEW{
                     </div>
                     <div class="modal-body border border-0">
                         <div class="p-3">
-
+                            
                         </div>
                     </div>
                     <div class="modal-footer border border-0"></div>
                 </div>
             </div>
         </div>
-        
-        ';
+        <?php 
     }
 
 }
