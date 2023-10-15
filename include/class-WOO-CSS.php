@@ -37,6 +37,10 @@ if( !class_exists( 'WOOCSS' ). false ){
 			$plugin_URL = plugins_url( '/js/custom-pluign-script.js' , __FILE__ );
 			$version = filemtime( plugin_dir_path(__FILE__) . '/js/custom-pluign-script.js' );
 			wp_enqueue_script( 'custom_plugin_js', $plugin_URL, array(), $version, true );
+			$style_URL = plugins_url( '/custom_style.css' , __FILE__ );
+			$version = filemtime( plugin_dir_path(__FILE__) . '/custom_style.css' );
+			wp_register_style( 'custom_style_css', $style_URL, array(), $version, 'all' );
+            wp_enqueue_style( 'custom_style_css' );
 		}
 		public function custom_add_action_plugin( $plugin_link, $plugin_file ){
 			if ( $plugin_file != CUSTOM_SETTING_PLUGIN_BASENAME ) {

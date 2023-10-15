@@ -12,7 +12,15 @@ $settings = array(
 		'desc' =>  __( '', 'woocommerce-custom-settings-plugin' ),
 		'id' => 'woocommerce_shop_page_settings'
 	),
-	
+		
+	array(
+		'title' => __( 'Enable Bootstrap 5', 'woocommerce-custom-settings-plugin' ),
+		'desc' => __( 'Enable Bootstrap 5 for your website. If your website theme is not using Bootstrap. Version "5.3.2"', 'woocommerce-custom-settings-plugin' ),
+		'id' => 'woo_theme_bootstrap5',
+		'default'  => 'no',
+		'type' => 'checkbox',                   
+		//'desc_tip' => false,
+	),
 	array(
 		'title' => __( 'Woo Breadcrumb', 'woocommerce-custom-settings-plugin' ),
 		'desc' => __( 'Hide WooCommerce Breadcrumb from shop page.', 'woocommerce-custom-settings-plugin' ),
@@ -60,19 +68,11 @@ $settings = array(
 		'default'  => 'no',
 		'type' => 'checkbox',                   
 		//'desc_tip' => false,
-	),
+	),	
 	array(
 		'title' => __( 'Woo Product Qucik View', 'woocommerce-custom-settings-plugin' ),
-		'desc' => __( 'Enable Product quick view optin for shop page products.', 'woocommerce-custom-settings-plugin' ),
+		'desc' => __( 'Enable Product Quick view option for the shop page products.', 'woocommerce-custom-settings-plugin' ),
 		'id' => 'woo_product_quickview',
-		'default'  => 'no',
-		'type' => 'checkbox',                   
-		//'desc_tip' => false,
-	),
-	array(
-		'title' => __( 'Bootstrap 5', 'woocommerce-custom-settings-plugin' ),
-		'desc' => __( 'Enable Bootstrap 5 for your website. If your website not using Bootstrap version "5.3.2".', 'woocommerce-custom-settings-plugin' ),
-		'id' => 'woo_theme_bootstrap5',
 		'default'  => 'no',
 		'type' => 'checkbox',                   
 		//'desc_tip' => false,
