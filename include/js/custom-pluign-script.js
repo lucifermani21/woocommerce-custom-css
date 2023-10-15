@@ -2,9 +2,7 @@
 (function ($) {
     var product_maindiv  = document.querySelectorAll( '.woo_pro_img' );
     var product_img_2  = document.querySelectorAll( '.product_img_2' );    
-    product_img_2.forEach( pro_img => {
-        pro_img.style.display = 'none';
-    });
+    product_img_2.forEach( pro_img => { pro_img.style.display = 'none' });
     product_maindiv.forEach( div => {
         div.onmouseover = function(){
             setTimeout(function(){
