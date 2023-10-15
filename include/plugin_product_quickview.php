@@ -9,6 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class WOO_CUSTOM_QUICKVIEW{
     public function custom_hooks(){
         add_action( 'wp_enqueue_scripts', array( $this, 'MS_add_bootstrap5' ) );
+        add_action( 'woocommerce_after_shop_loop_item', array( $this, 'MS_custom_quickview' ), 10 );
     }
     public function MS_add_bootstrap5(){
         $enable_woo_theme_bootstrap5 = get_option( 'woo_theme_bootstrap5' );
@@ -18,6 +19,9 @@ class WOO_CUSTOM_QUICKVIEW{
             wp_register_style( 'MS_bootstrap_css', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/'.$version.'/css/bootstrap.min.css', array(), $version, 'all' );
             wp_enqueue_style( 'MS_bootstrap_css' );
         }
+    }
+    public function MS_custom_quickview(){
+        echo "Test";
     }
 
 }

@@ -33,20 +33,16 @@
 	box-shadow: $product_box_shadow;
 }
 @mixin woo-title {
-    letter-spacing: -.0025em !important;    
-    font-weight: 600 !important;
-    text-transform: uppercase!important;
-    margin-top: 1.5rem!important;
-    margin-bottom: 1.5rem!important;
-    
+    letter-spacing: -.0025em !important;
+    font-size: $product_title_size;
 }
 @mixin woo-price {	
 	font-size: $product_price_size !important;
     color: $product_price_text !important;
-    font-weight: 700!important;
     font-family: $font-family;
     line-height: 1.5;
     padding: 0px !important;
+    display: block;
 }
 @mixin cart-table {
     background-color: $table_hbg_clr;
