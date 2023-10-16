@@ -59,10 +59,9 @@ a.button.wc-backward:hover,
    
 }
 .woocommerce .products .product .woocommerce-loop-product__title,
-.woocommerce woocommerce-loop-category__title{
+.woocommerce .woocommerce-loop-category__title{
 	@include woo-title;
 	color: $product_title_text !important;
-	font-size: $product_title_size !important;
 }	
 .woocommerce .products .product .price{			
     @include woo-price;
@@ -105,6 +104,7 @@ span.woocommerce-Price-currencySymbol {
 .woo-sidebar .widget{
     margin-bottom: 25px;
     border: 1px solid #ccc;
+	padding: 10px;
 }
 .woo-sidebar .widget .wc-block-product-categories{
     margin: 0px;
@@ -148,24 +148,6 @@ content: "Categories";
     padding: 0px;
     list-style: none;				
 }
-
-.woo-sidebar .widget ul li{
-    padding: 10px 15px;
-}
-
-.woo-sidebar .widget ul li + li{
-    border-top: 1px solid #ccc;
-}
-
-.woo-sidebar .widget ul li a{
-    color: inherit;
-    text-decoration: none;
-}
-
-.woo-sidebar .widget ul li a:hover{
-    text-decoration: underline;
-}
-
 .woo-sidebar .widget .price_slider_wrapper{
     margin: 25px 15px 20px 15px;
 }
@@ -192,12 +174,7 @@ content: "Categories";
 	padding: 2px;
 	border: 1px solid #d3ced2;
 }
-.woocommerce div.product div.images .flex-control-thumbs{
-	margin: 5px -5px;
-}
-.woocommerce div.product div.images .flex-control-thumbs li{
-	padding: 5px;
-}
+
 .woocommerce div.product div.images .flex-control-thumbs li img{
 	padding: 2px;
 	border: 1px solid #d3ced2;
@@ -353,14 +330,14 @@ content: "Categories";
 	width:auto;
 	float:left!important;
 }
-
+span.select2-selection.select2-selection--single,
 .select2-container .select2-selection--single,
 .select2-container--default .select2-selection--single .select2-selection__arrow{
 	height: 41px;
 	border-radius: 0px;
 	border-color: #ced4da!important;
 }
-
+span.select2-selection.select2-selection--single,
 	.select2-container .select2-selection--single > span{
 		line-height: 41px!important;
 	}
