@@ -85,7 +85,7 @@ if( !class_exists( 'MS_Custom_hooks_Setting' ) ){
         }
         function MS_button_text(){
             global $product;
-			$product_type = $product->get_type();		
+			$product_type = $product->product_type;
 			
             $simple_btn = get_option( 'simple_pro_btn' );
             $variable_btn = get_option( 'variable_pro_btn' );
