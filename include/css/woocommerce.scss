@@ -28,7 +28,9 @@ a.button.wc-backward,
 .woocommerce input.button.alt,
 .woocommerce #respond input#submit,
 .woocommerce button.button,
-.woocommerce input.button{
+.woocommerce input.button,
+.wc-block-components-button,
+.woo_sc_price_btn_popup.woo_sc_btn_span.woo_sc_call_popup{
     @include woo-btn;
 }
 a.button.wc-backward:hover,
@@ -43,7 +45,9 @@ a.button.wc-backward:hover,
 .woocommerce input.button.alt:hover,
 .woocommerce #respond input#submit:hover,
 .woocommerce button.button:hover,
-.woocommerce input.button:hover{
+.woocommerce input.button:hover,
+.wc-block-components-button:hover,
+.woo_sc_price_btn_popup.woo_sc_btn_span.woo_sc_call_popup:hover{
 	@include woo-btn-hover;
 }
 .woocommerce .shop-pro-img img,
