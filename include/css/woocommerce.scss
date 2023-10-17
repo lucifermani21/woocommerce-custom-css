@@ -30,6 +30,7 @@ a.button.wc-backward,
 .woocommerce button.button,
 .woocommerce input.button,
 .wc-block-components-button,
+.wc-block-components-totals-coupon-link,
 .woo_sc_price_btn_popup.woo_sc_btn_span.woo_sc_call_popup{
     @include woo-btn;
 }
@@ -47,6 +48,7 @@ a.button.wc-backward:hover,
 .woocommerce button.button:hover,
 .woocommerce input.button:hover,
 .wc-block-components-button:hover,
+.wc-block-components-totals-coupon-link:hover,
 .woo_sc_price_btn_popup.woo_sc_btn_span.woo_sc_call_popup:hover{
 	@include woo-btn-hover;
 }
