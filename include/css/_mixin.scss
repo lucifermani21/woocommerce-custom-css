@@ -13,7 +13,7 @@
     color: $btn_txt_clr !important;
 }
 @mixin woo-btn-hover {
-    border-color: $border-color!important;
+    border-color: $btn_hclr!important;
     background-color : $btn_hclr !important;
     color: $btn_htxt_clr !important;
 }
@@ -38,7 +38,7 @@
 }
 @mixin woo-price {	
 	font-size: $product_price_size !important;
-    color: $product_price_text !important;
+	color: $product_price_text !important;
     font-family: $font-family;
     line-height: 1.5;
     padding: 0px !important;
