@@ -13,10 +13,20 @@ class WOO_IMAGE_HOVER{
     public function MS_productimage_remove_add_hook(){
         $woo_product_img_hovr = get_option( 'woo_product_img_hovr' );
         if( $woo_product_img_hovr === 'yes' ){
+			add_action( 'wp_head', array( $this, 'MS_hover_image_CSS' ) );
             remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
             add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'MS_woocommerce_thumbnail_callback' ), 10 );
         }
     }
+	
+	public function MS_hover_image_CSS(){
+		echo "<style type='text/css'>
+		.woo_pro_img {position: relative;}
+		.woo_pro_img img{transition: all 0.25s linear;z-index: 0;}
+		.woo_pro_img img + img{	position: absolute;	left: 0;top: 0;	opacity: 0;	z-index:1;}
+		.woo_pro_img:hover img + img{opacity: 1;}
+		</style>";
+	}
 
     public function MS_woocommerce_thumbnail_callback( $size = 'shop_catalog' ){
         global $post;
