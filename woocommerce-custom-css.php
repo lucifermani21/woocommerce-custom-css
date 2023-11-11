@@ -19,12 +19,17 @@ define( 'CUSTOM_EDITING__DIR', plugin_dir_path( __FILE__ ) );
 define( 'CUSTOM_SETTING_PLUGIN', __FILE__ );
 define( 'CUSTOM_SETTING_PLUGIN_BASENAME', plugin_basename( CUSTOM_SETTING_PLUGIN ) );
 
-if( is_plugin_active( 'woocommerce/woocommerce.php' ) ){
-    include_once CUSTOM_EDITING__DIR .  '/include/class-WOO-CSS.php';
-    include_once CUSTOM_EDITING__DIR .  '/include/plugin_setting_class.php';
-	include_once CUSTOM_EDITING__DIR .  '/include/plugin_custom_functions.php';
-    include_once CUSTOM_EDITING__DIR .  '/include/plugin_hooks_setting.php';
-	include_once CUSTOM_EDITING__DIR .  '/include/plugin_css_setting.php';
-    include_once CUSTOM_EDITING__DIR .  '/include/plugin_hover_image.php';
-    //include_once CUSTOM_EDITING__DIR .  '/include/plugin_product_quickview.php';
+if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+	function is_woocommerce_activated() {
+		if ( class_exists( 'woocommerce' ) ) 
+		{
+			include_once CUSTOM_EDITING__DIR .  '/include/class-WOO-CSS.php';
+			include_once CUSTOM_EDITING__DIR .  '/include/plugin_setting_class.php';
+			include_once CUSTOM_EDITING__DIR .  '/include/plugin_custom_functions.php';
+			include_once CUSTOM_EDITING__DIR .  '/include/plugin_hooks_setting.php';
+			include_once CUSTOM_EDITING__DIR .  '/include/plugin_css_setting.php';
+			include_once CUSTOM_EDITING__DIR .  '/include/plugin_hover_image.php';
+			//include_once CUSTOM_EDITING__DIR .  '/include/plugin_product_quickview.php';
+		}
+	}
 }
