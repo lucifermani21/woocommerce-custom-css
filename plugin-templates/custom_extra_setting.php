@@ -6,7 +6,7 @@ $settings = array(
 		'desc'  => '',
 		'id'    => 'extra_options',
 	),
-	array(
+	/*array(
 		'title' => __( 'Add Custom Style', 'text-domain' ),
 		'type' => 'textarea',
 		'desc' => __( 'Add custom CSS here for WooCoomerce or overwrite current CSS.', 'text-domain' ),
@@ -14,7 +14,7 @@ $settings = array(
 		'id' => 'custom_woocommerce_css',
 		'css' => 'width:100%;height:300px;',
 		'class' => 'codemirror_text',
-	),
+	),*/
 	array(
 		'type' => 'sectionend',
 		'id'   => 'extra_options',
