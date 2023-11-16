@@ -23,13 +23,14 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 	function is_woocommerce_activated() {
 		if ( class_exists( 'woocommerce' ) ) 
 		{
-			include_once CUSTOM_EDITING__DIR .  '/include/class-WOO-CSS.php';
-			include_once CUSTOM_EDITING__DIR .  '/include/plugin_setting_class.php';
-			include_once CUSTOM_EDITING__DIR .  '/include/plugin_custom_functions.php';
-			include_once CUSTOM_EDITING__DIR .  '/include/plugin_hooks_setting.php';
-			include_once CUSTOM_EDITING__DIR .  '/include/plugin_css_setting.php';
-			include_once CUSTOM_EDITING__DIR .  '/include/plugin_hover_image.php';
-			//include_once CUSTOM_EDITING__DIR .  '/include/plugin_product_quickview.php';
+include_once CUSTOM_EDITING__DIR .  '/include/class-WOO-CSS.php';
+include_once CUSTOM_EDITING__DIR .  '/include/plugin_setting_class.php';
+include_once CUSTOM_EDITING__DIR .  '/include/plugin_custom_functions.php';
+include_once CUSTOM_EDITING__DIR .  '/include/plugin_hooks_setting.php';
+include_once CUSTOM_EDITING__DIR .  '/include/plugin_css_setting.php';
+include_once CUSTOM_EDITING__DIR .  '/include/plugin_hover_image.php';
+//include_once CUSTOM_EDITING__DIR .  '/include/plugin_product_quickview.php';
 		}
 	}
 }
+is_woocommerce_activated();
