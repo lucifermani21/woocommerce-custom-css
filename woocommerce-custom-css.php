@@ -27,4 +27,10 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 	include_once CUSTOM_EDITING__DIR .  '/include/plugin_css_setting.php';
 	include_once CUSTOM_EDITING__DIR .  '/include/plugin_hover_image.php';
 	//include_once CUSTOM_EDITING__DIR .  '/include/plugin_product_quickview.php';
+} else {
+	add_action( 'admin_notices', 'MS_admin_notice_warning' );
+	function MS_admin_notice_warning() 
+	{
+		echo '<div class="notice notice-error"><p><strong>Error:</strong> Please note, the WooCommerce plugin is not active.</p></div>'; 
+	}	
 }
