@@ -35,12 +35,15 @@ class WOO_SALE_COUNTER
 		$date_format = apply_filters( 'woocommerce_sale_price_end_date_format', 'M j, Y' );
 		$start_date = date_i18n( $date_format, $sale_start_date );
         $end_date = date_i18n( $date_format, $sale_end_date );
-		$end_time = '23:59:00';
+		$end_time = ( $sale_start_date && $sale_end_date ) != '' ? '23:59:00' : '00:00:00';
 		$current_date = date( 'M j, Y' );
-		if( ( $start_date != $current_date ) && !empty( $start_date ) && ( $end_date != $current_date ) && ( $start_date != $end_date ) ){
-			$this->sale_starttimer_html( $start_date, $end_time );
-		}else{
-			$this->sale_endtimer_html( $end_date, $end_time );
+		//var_dump( $sale_end_date );
+		if( ( !empty( $start_date ) ) && ( !empty( $end_date ) ) ){
+			if( ( $start_date != $current_date ) && !empty( $start_date ) && ( $end_date != $current_date ) && ( $start_date != $end_date ) && ( $sale_start_date != '' ) ){
+				$this->sale_starttimer_html( $start_date, $end_time );
+			}elseif( ( $sale_end_date ) != '' ){
+				$this->sale_endtimer_html( $end_date, $end_time );
+			}
 		}
 	}
 }
