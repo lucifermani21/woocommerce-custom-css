@@ -44,11 +44,11 @@ class WOO_SALE_COUNTER
         $end_date = date_i18n( $date_format, $sale_end_date );
 		$end_time = ( $sale_start_date && $sale_end_date ) != '' ? '23:59:00' : '00:00:00';
 		$current_date = date( 'M j, Y' );
-		//var_dump( $sale_end_date );
-		if( ( !empty( $start_date ) ) && ( !empty( $end_date ) ) ){
-			if( ( $start_date != $current_date ) && !empty( $start_date ) && ( $end_date != $current_date ) && ( $start_date != $end_date ) && ( $sale_start_date != '' ) ){
+
+		if( ( !empty( $sale_start_date ) ) && ( !empty( $sale_end_date ) ) ){
+			if( ( ($start_date > $current_date ) && ( $start_date != $current_date ) ) && !empty( $start_date ) && ( $end_date != $current_date ) && ( $start_date != $end_date ) && ( $sale_start_date != '' ) ){
 				$this->sale_starttimer_html( $start_date, $end_time );
-			}elseif( ( $sale_end_date ) != '' ){
+			}elseif( ( $sale_end_date ) != '' ) {
 				$this->sale_endtimer_html( $end_date, $end_time );
 			}
 		}
