@@ -9,10 +9,17 @@ class WOO_SALE_COUNTER
 {
 	public function MS_sale_hooks()
 	{
-		add_action( 'wp_enqueue_scripts', array( $this, 'MS_sale_counter_scripts' ) );
-		add_action('woocommerce_before_add_to_cart_form', array( $this, 'MS_sale_counter_shop_detail_page' ) );
-		add_action( 'woocommerce_after_shop_loop_item', array( $this, 'MS_sale_loop_shop_page' ), 10 );
-		
+		$sale_counter_loop = get_option( 'woo_shop_sale_counter' );
+		$sale_counter_detail_page = get_option( 'woo_product_detail_sale_counter' );
+		if( ( $sale_counter_loop == 'yes' ) || ( $sale_counter_detail_page == 'yes' ) ){
+			add_action( 'wp_enqueue_scripts', array( $this, 'MS_sale_counter_scripts' ) );
+		}
+		if( $sale_counter_loop == 'yes' ){
+			add_action( 'woocommerce_after_shop_loop_item', array( $this, 'MS_sale_loop_shop_page' ), 10 );
+		}
+		if( $sale_counter_detail_page == 'yes' ){
+			add_action('woocommerce_before_add_to_cart_form', array( $this, 'MS_sale_counter_shop_detail_page' ) );
+		}		
 	}
 	public function MS_sale_counter_scripts()
 	{
