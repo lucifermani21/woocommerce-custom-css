@@ -13,11 +13,18 @@ class WOO_IMAGE_HOVER{
     public function MS_productimage_remove_add_hook(){
         $woo_product_img_hovr = get_option( 'woo_product_img_hovr' );
         if( $woo_product_img_hovr === 'yes' ){
-			add_action( 'wp_head', array( $this, 'MS_hover_image_CSS' ) );
+			//add_action( 'wp_head', array( $this, 'MS_hover_image_CSS' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'MS_hover_scripts' ) );
             remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
             add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'MS_woocommerce_thumbnail_callback' ), 10 );
         }
     }
+	
+	public function MS_hover_scripts(){
+		$plugin_URL = plugins_url( '/js/custom-pluign-script.js' , __FILE__ );
+		$version = filemtime( plugin_dir_path(__FILE__) . '/js/custom-pluign-script.js' );
+		wp_enqueue_script( 'custom_plugin_js', $plugin_URL, array(), $version, true );
+	}
 	
 	public function MS_hover_image_CSS(){
 		echo "<style type='text/css'>
