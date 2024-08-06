@@ -25,7 +25,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 	include_once CUSTOM_EDITING__DIR .  '/include/plugin_custom_functions.php';
 	include_once CUSTOM_EDITING__DIR .  '/include/plugin_hooks_setting.php';
 	include_once CUSTOM_EDITING__DIR .  '/include/plugin_css_setting.php';
-	include_once CUSTOM_EDITING__DIR .  '/include/plugin_sale_counter.php';
+	//include_once CUSTOM_EDITING__DIR .  '/include/plugin_sale_counter.php';
 	include_once CUSTOM_EDITING__DIR .  '/include/plugin_hover_image.php';
 	//include_once CUSTOM_EDITING__DIR .  '/include/plugin_product_quickview.php';
 } else {
